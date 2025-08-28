@@ -1,22 +1,37 @@
-[gd_scene format=3 uid="uid://h4j75pjigcpi"]
+[gd_scene load_steps=3 format=3 uid="uid://h4j75pjigcpi"]
 
-[node name="Main Node" type="Node"]
+[ext_resource type="Script" uid="uid://1pnf6p6bfqpa" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="VideoStream" path="/home/c2/output.ogv" id="2_0xm2m"]
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="Main Node" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_0xm2m")
 autoplay = true
+expand = true
 loop = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 0.572549)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -44,10 +59,3 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "QUIT
 "
-
-[node name="FadeRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
